@@ -1,11 +1,19 @@
-import './App.css';
+import "./App.css";
+import styled from "styled-components";
 
-function App() {
+import Background from "./components/Background";
+import TextSection from "./components/TextSection";
+
+export default function App() {
   return (
-    <div className="App">
-
-    </div>
+    <Wrapper className="App">
+      <Background />
+      <TextSection />
+    </Wrapper>
   );
 }
 
-export default App;
+const Wrapper = styled.div`
+  position: relative;
+  background: #1f1144;
+`;
