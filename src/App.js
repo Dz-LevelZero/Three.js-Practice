@@ -5,9 +5,10 @@ import styled from "styled-components";
 import Background from "./components/Background";
 import TextSection from "./components/TextSection";
 import { Canvas } from "@react-three/fiber";
-import Box from "./components/Box";
 import { OrbitControls } from "@react-three/drei";
+import Box from "./components/Box";
 import AnimatedSphere from "./components/AnimatedSphere";
+import Porsche from "./components/Porsche";
 
 export default function App() {
   
@@ -29,6 +30,14 @@ export default function App() {
         <directionalLight position={[-2, 5, 2]} intensity={1} />
         <Suspense fallback={null}>
           <AnimatedSphere/>
+        </Suspense>
+      </Canvas>
+      <Canvas className="canvas">
+        <OrbitControls enableZoom={false} />
+        <ambientLight intensity={0.5} />
+        <directionalLight position={[-2, 5, 2]} intensity={1} />
+        <Suspense fallback={null}>
+          <Porsche />
         </Suspense>
       </Canvas>
     </Wrapper>
